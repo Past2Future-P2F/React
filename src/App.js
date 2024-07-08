@@ -26,13 +26,14 @@ function App() {
   };
 
   return (
-    <div className="Questions">
+    <div className="questions">
       <Question question="질문 1" onChange={handleChange1}/>
       <br></br>
       <Question question="질문 2" onChange={handleChange2}/>
       <br></br>
       <Question question="질문 3" onChange={handleChange3}/>
       <br></br>
+      <span>{answer1}</span>
       <button onClick={testButtonClick}>Test</button>
     </div>
   );
