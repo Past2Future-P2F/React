@@ -9,8 +9,8 @@ function App() {
   const [age, setAge] = useState(0);
   const [description , setDescription] = useState('');
 
-  const handleGender = useCallback(function handleGender(value) {
-    setGender(value);
+  const handleGender = useCallback(function handleGender(event) {
+    setGender(event.target.value);
   }, []);
   const handleAge = useCallback(function handleAge(event) {
     setAge(event.target.value);
@@ -28,14 +28,13 @@ function App() {
 
   return (
     <div className="questions">
-      <Gender setGenderToFemale={handleGender("Female")} setGenderToMale={handleGender("Male")}/>
+      <Gender onChange={handleGender}/>
       <br></br>
       <Question question="나이" onChange={handleAge}/>
       <br></br>
       <Question question="자신을 잘 표현할 수 있는 단어 3개와 그 이유를 말해보세요." onChange={handleDescription}/>
       <br></br>
-      <span>{gender}</span>
-      <button onClick={testButtonClick}>Test</button>
+      <button onClick={testButtonClick}>제출</button>
     </div>
   );
 }

@@ -31,3 +31,27 @@
       padding-left: 0;
   }
 }
+
+button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50; /* 기본 배경 색상 */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+button:hover {
+  background-color: #45a049; /* 마우스 오버 시 배경 색상 */
+  transform: translateY(-2px); /* 마우스 오버 시 살짝 위로 이동하는 효과 */
+}
+
+button:active {
+  background-color: #3e8e41; /* 클릭 시 배경 색상 */
+  transform: translateY(0); /* 클릭 시 원래 위치로 돌아옴 */
+}

@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './Gender.css';
 import './Question.css';
 
-const Gender = ( {setGenderToMale, setGenderToFemale} ) => {
+const Gender = ( {onChange} ) => {
     return (
         <div className='wrp'>
         <span className='question'>성별</span>
-            <div>
+            <div className='radio-container'>
                 <label>
                     <input
                         type="radio"
-                        onChange={setGenderToMale}
+                        name="gender"
+                        value="Male"
+                        onChange={onChange}
                     />
                     남성
                 </label>
                 <label>
                     <input
                         type="radio"
-                        onChange={setGenderToFemale}
+                        name="gender"
+                        value="Female"
+                        onChange={onChange}
                     />
                     여성
                 </label>
