@@ -3,7 +3,6 @@ import { useCallback, useState } from 'react';
 import Question from './components/Question';
 import Gender from './components/Gender';
 import { useNavigate } from 'react-router-dom';
-import Header from './components/Header';
 
 function MainPage() {
   const navigator = useNavigate();
@@ -22,10 +21,21 @@ function MainPage() {
     setDescription(event.target.value);
   }, []);
 
-  const submit = () => {
+  const validate = () => {
+    if (gender === '' || age === '' || description === '') return false;
+    if (isNaN(age)) return false;
+    if (parseInt(age) <= 0) return false;
+    return true;
+  };
+
+  const handleClick = () => {
+    if (!validate()) {
+      alert("입력이 올바르지 않습니다.");
+      return;
+    }
     const list = {
       "gender": gender,
-      "age": age,
+      "age": parseInt(age),
       "description": description
     };
     navigator('./result', {
@@ -42,7 +52,7 @@ function MainPage() {
       <br/>
       <Question question="자신을 잘 표현할 수 있는 단어 3개와 그 이유를 말해보세요." onChange={handleDescription}/>
       <br/>
-      <button onClick={submit}>제출</button>
+      <button onClick={handleClick}>제출</button>
     </div>
   );
 }
