@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import Question from './components/Question';
 import Gender from './components/Gender';
 import { useNavigate } from 'react-router-dom';
+import Header from './components/Header';
 
 function MainPage() {
   const navigator = useNavigate();
