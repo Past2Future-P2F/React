@@ -5,8 +5,8 @@ import Gender from './components/Gender';
 
 function App() {
 
-  const [gender, setGender] = useState('Male');
-  const [age, setAge] = useState(0);
+  const [gender, setGender] = useState('');
+  const [age, setAge] = useState('');
   const [description , setDescription] = useState('');
 
   const handleGender = useCallback(function handleGender(event) {
