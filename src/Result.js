@@ -6,8 +6,14 @@ function Result() {
     console.log(location.state);
     console.log("called");
 
+    const data = { ...location.state };
+    
     return (
-        <a>Hello World!</a>
+        <>
+            <p>{data["gender"]}</p>
+            <p>{data["age"]}</p>
+            <p>{data["description"]}</p>
+        </>
     );
 }
 
