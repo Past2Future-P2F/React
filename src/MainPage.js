@@ -28,7 +28,7 @@ function MainPage() {
     return true;
   };
 
-  const handleClick = () => {
+  const handleClick = useCallback(function handleClick() {
     if (!validate()) {
       alert("입력이 올바르지 않습니다.");
       return;
@@ -42,7 +42,7 @@ function MainPage() {
       replace: true,
       state: { ...list },
     });
-  };
+  });
 
   return (
     <div className="questions">
